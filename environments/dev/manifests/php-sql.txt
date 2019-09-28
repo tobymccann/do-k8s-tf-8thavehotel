@@ -1,0 +1,3 @@
+$db = mysqli_init();
+mysqli_real_connect($db, 'private-mysql-cluster-do-user-916868-0.db.ondigitalocean.com:25060', 'gl8ahwpdbuser', 'SAqE3XnXDx3Zf51', NULL, NULL, NULL, MYSQLI_CLIENT_SSL);
+var_dump(mysqli_query($db, 'STATUS;'));

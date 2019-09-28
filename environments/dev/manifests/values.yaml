@@ -1,0 +1,18 @@
+## Blog/Site Info
+wordpressUsername: eahwpuser
+wordpressPassword: SAqE3XnXDx3Zf51
+wordpressEmail: admin@8thavenuehotel.com
+wordpressFirstName: WP
+wordpressLastName: Admin
+wordpressBlogName: 8th Avenue Hotel
+
+## Database Settings
+externalDatabase:
+  host: mysql-cluster-do-user-916868-0.db.ondigitalocean.com:25060
+  user: eahwpuser
+  password: SAqE3XnXDx3Zf51
+  database: wordpress
+
+## Disabling MariaDB
+mariadb:
+  enabled: false

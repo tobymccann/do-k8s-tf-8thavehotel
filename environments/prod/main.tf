@@ -17,7 +17,9 @@ terraform {
 
 
 provider "digitalocean" {
-    token = "${var.do_token}"
+    token = var.do_token
+    spaces_access_id  = var.access_id
+    spaces_secret_key = var.secret_key
 }
 
 module "db" {
@@ -28,14 +30,10 @@ module "db" {
     do_region = var.do_region
 }
 
-resource "digitalocean_volume" "DO_PV" {
-  region                  = var.do_region
-  name                    = var.do_volume_name
-  size                    = var.do_volume_size
-  initial_filesystem_type = "ext4"
-  description             = "K8S Frontend PVC Volume"
+resource "digitalocean_spaces_bucket" "gltd-prd-wp-spaces" {
+  name   = var.do_spaces_name
+  region = var.do_spaces_region
 }
-
 
 resource "digitalocean_kubernetes_cluster" "tf-k8s-cluster" {
   name    = var.do_k8s_name

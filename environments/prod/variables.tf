@@ -6,14 +6,23 @@
 
 
 variable "do_token" {}
-
+variable "access_id" {}
+variable "secret_key" {}
 variable "do_region" {
     default = "nyc1"
+}
+variable "do_spaces_region" {
+    default = "nyc3"
 }
 variable "ssh_fingerprint" {}
 variable "ssh_private_key" {
     default = "~/.ssh/do-key-ecdsa"
 }
+
+variable "do_spaces_name" {
+    description = "DigitalOcean managed objext storage name"
+}
+
 
 variable "do_volume_name" {
     description = "DigitalOcean managed storage volume name"

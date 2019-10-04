@@ -30,10 +30,10 @@ module "db" {
     do_region = var.do_region
 }
 
-resource "digitalocean_spaces_bucket" "gltd-prd-wp-spaces" {
-  name   = var.do_spaces_name
-  region = var.do_spaces_region
-}
+#resource "digitalocean_spaces_bucket" "gltd-prd-wp-spaces" {
+#  name   = var.do_spaces_name
+#  region = var.do_spaces_region
+#}
 
 resource "digitalocean_kubernetes_cluster" "tf-k8s-cluster" {
   name    = var.do_k8s_name

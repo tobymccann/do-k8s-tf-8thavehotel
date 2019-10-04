@@ -49,7 +49,7 @@ variable "do_k8s_name" {
 
 variable "k8s_version" {
 	description = "DO Kubernetes Version"
-    default = "1.15.3-do.2"
+    default = "1.15.3-do.3"
 }
 
 variable "do_tag_env" {

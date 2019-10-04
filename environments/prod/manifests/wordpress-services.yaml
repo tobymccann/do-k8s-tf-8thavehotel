@@ -7,8 +7,9 @@ metadata:
     app: wordpress
   annotations:
     service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
+    service.beta.kubernetes.io/do-loadbalancer-algorithm: "least_connections"
     service.beta.kubernetes.io/do-loadbalancer-healthcheck-protocol: "tcp"
-    service.beta.kubernetes.io/do-loadbalancer-healthcheck-path: "/wp-login.php"
+    #service.beta.kubernetes.io/do-loadbalancer-healthcheck-path: "/wp-login.php"
 spec:
   ports:
     - name: http

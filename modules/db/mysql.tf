@@ -19,22 +19,3 @@ resource "mysql_database" "wordpress" {
   default_character_set = "utf8"
   default_collation = "utf8_unicode_ci"
 }
-
-# Create the Worpress User
-resource "mysql_user" "eahwpuser" {
-  user = "eahwpuser"
-  host = "8thavenuehotel.com"
-  plaintext_password = "SAqE3XnXDx3Zf51"
-}
-
-//resource "mysql_user_password" "eahwpuser" {
-//  user = mysql_user.eahwpuser.user
-//  pgp_key = "keybase:tobymccann"
-//}
-
-resource "mysql_grant" "eahwpuser" {
-  user       = mysql_user.eahwpuser.user
-  host       = mysql_user.eahwpuser.host
-  database   = mysql_database.wordpress.name
-  privileges = ["ALL"]
-}
